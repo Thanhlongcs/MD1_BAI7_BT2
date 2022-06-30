@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Month</title>
+</head>
+<body>
+<h1>Nhập vào tháng của bạn</h1>
+<input type="text" id="month">
+<input type ="button" value ="Tính số ngày" onclick ="checkMonth()">
+<p id="result"></p>
+<script>
+  function checkMonth() {
+    let month1 = +document.getElementById('month').value;
+    switch (month1) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        document.getElementById('result').innerText = "Tháng " + month1 + " có 31 ngày";
+        break;
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        document.getElementById('result').innerText = "Tháng " + month1 + " có 30 ngày";
+        break;
+      case 2:
+        document.getElementById('result').innerText = "Tháng " + month1 + " có 28 hoặc 29 ngày";
+        break;
+      default:
+        document.getElementById('result').innerText = "Tháng bạn nhập không hợp lệ";
+    }
+  }
+</script>
+</body>
+</html>
